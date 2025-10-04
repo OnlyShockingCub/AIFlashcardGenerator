@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flashcards</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header class="top-bar">
+    <img src="{{ url_for('static', filename='images/flashywhiz-logo.png') }}" alt="FlashyWhiz Logo" class="logo-img" />
+  </header>
+
+  <div class="container">
+    <nav>
+      <a href="{{ url_for('leaderboard') }}" class="nav-link leaderboard-link">🏆 Leaderboard</a>
+      <a href="{{ url_for('brainbreak') }}" class="nav-link brainbreak-link">🧠 Brain Break</a>
+      <a href="{{ url_for('upload_pdf') }}" class="nav-link upload-link">📄 Upload PDF</a>
+    </nav>
+
+    {% if flashcards %}
+      <div id="flashcard-container">
+        <div id="flashcard" class="flashcard">
+          <div class="card-inner">
+            <div class="card-front" id="card-front"></div>
+            <div class="card-back" id="card-back"></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="prev-btn" disabled>Previous</button>
+          <div id="score-display">0/{{ flashcards|length }}</div>
+          <button id="next-btn">Next</button>
+        </div>
+
+        <div class="answer-area">
+          <input type="text" id="answer-input" placeholder="Type your answer here" />
+          <button id="check-answer">Check Answer</button>
+          <button id="give-up">Give Up</button>
+        </div>
+
+        <div id="hint-box"></div>
+
+        <div style="margin-top:2rem;">
+          <h3>Ask about this flashcard</h3>
+          <div class="qa-area">
+            <input type="text" id="qa-question" placeholder="Your question..." />
+            <button id="qa-ask">Ask</button>
+          </div>
+          <div id="qa-answer"></div>
+        </div>
+
+        <div id="completion-message"></div>
+
+        <script id="flashcards-data" type="application/json">{{ flashcards|tojson }}</script>
+        <script id="grade-levels-data" type="application/json">{{ grade_levels|tojson }}</script>
+        <script src="{{ url_for('static', filename='flashcards.js') }}"></script>
+      </div>
+    {% else %}
+      <form method="POST">
+        <label for="num_flashcards">Number of Flashcards:</label>
+        <input type="number" id="num_flashcards" name="num_flashcards" required />
+
+        <label for="prompt">What do you want to learn about?</label>
+        <input type="text" id="prompt" name="prompt" required />
+
+        <label for="grade_level">Select Grade Level:</label>
+        <select id="grade_level" name="grade_level" required>
+          {% for level in grade_levels %}
+            <option value="{{ level }}">Grade {{ level }}</option>
+          {% endfor %}
+        </select>
+
+        <button type="submit" class="submit-btn">Generate Flashcards</button>
+      </form>
+    {% endif %}
+  </div>
+</body>
+</html>

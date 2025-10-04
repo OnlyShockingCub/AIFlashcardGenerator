@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up - FlashyWhiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <header class="top-bar">
+    <img src="{{ url_for('static', filename='images/flashywhiz-logo.png') }}" alt="FlashyWhiz Logo" class="logo-img" />
+  </header>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form method="POST">
+      <label>Email</label>
+      <input type="email" name="email" required />
+      <label>Username</label>
+      <input type="text" name="username" required />
+      <label>Password</label>
+      <input type="password" name="password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+    {% if error %}
+      <p class="signup-error-message">{{ error }}</p>
+    {% endif %}
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+  </div>
+</body>
+</html>

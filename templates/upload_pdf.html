@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload PDF - FlashyWhiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <header class="top-bar">
+    <img src="{{ url_for('static', filename='images/flashywhiz-logo.png') }}" alt="FlashyWhiz Logo" class="logo-img" />
+  </header>
+
+  <div class="container">
+    <a href="{{ url_for('index') }}" class="upload-back-link">← Back to Home</a>
+
+    <h2 class="upload-title">📄 Upload a PDF and Generate Flashcards</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="upload-form">
+      <input type="file" name="pdf" accept=".pdf" required />
+      <button type="submit">Upload & Generate</button>
+    </form>
+
+    {% if notes %}
+    <div class="uploaded-notes">
+      <h3>📝 Extracted Notes:</h3>
+      <pre>{{ notes }}</pre>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>

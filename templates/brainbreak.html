@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brain Break</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body class="brainbreak-body">
+  <div class="game-container">
+    <iframe src="https://sourabhv.github.io/FlapPyBird/" title="Brain Break - Flappy Bird"></iframe>
+  </div>
+
+  <a href="{{ url_for('index') }}" class="back-button">← Back to Flashcards</a>
+</body>
+</html>
