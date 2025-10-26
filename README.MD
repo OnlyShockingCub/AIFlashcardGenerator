@@ -2,7 +2,7 @@
 
 - Python 3.x
 - Flask
-- OpenAI Python Clientgit
+- OpenAI ,Python, Git
 
 ---
 
