@@ -14,6 +14,8 @@
    git clone https://github.com/yourusername/flashcards-generator.git
    cd flashcards-generator
 2. **Run the Program:**
+    # YOU WONT BE ABLE TO GENERATE FLASHCARDS WITHOUT OPENAI API KEY
+
    ```bash
    python3 app.py
    # OR
