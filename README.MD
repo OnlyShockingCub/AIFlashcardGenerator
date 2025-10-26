@@ -1,3 +1,25 @@
+### **Requirements**
+
+- Python 3.x
+- Flask
+- OpenAI Python Clientgit
+
+---
+
+### **Installation**
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/flashcards-generator.git
+   cd flashcards-generator
+2. **Run the Program:**
+   ```bash
+   python3 app.py
+   # OR
+   python app.py
+   ```
+
 ### **Important Notes**
 
 - **OpenAI API Key**  
@@ -20,24 +42,3 @@ Our web interface is powered by Flask. It's made specifically to look appealing 
  You can adjust the number of flashcards, grade level, and topic.
 ---
 
-### **Requirements**
-
-- Python 3.x
-- Flask
-- OpenAI Python Clientgit
-
----
-
-### **Installation**
-
-1. **Clone the Repository:**
-
-   ```bash
-   git clone https://github.com/yourusername/flashcards-generator.git
-   cd flashcards-generator
-2. **Run the Program:**
-   ```bash
-   python3 app.py
-   # OR
-   python app.py
-   ```
