@@ -24,7 +24,7 @@ Our web interface is powered by Flask. It's made specifically to look appealing 
 
 - Python 3.x
 - Flask
-- OpenAI Python Client
+- OpenAI Python Clientgit
 
 ---
 
@@ -36,8 +36,8 @@ Our web interface is powered by Flask. It's made specifically to look appealing 
    git clone https://github.com/yourusername/flashcards-generator.git
    cd flashcards-generator
 2. **Run the Program:**
-    ```bash 
-    python3 app.py
-***OR***
-     ```bash
-    python app.py
+   ```bash
+   python3 app.py
+   # OR
+   python app.py
+   ```
